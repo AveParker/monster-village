@@ -13,5 +13,5 @@ function setup() {
 }
 
 function windowResized() {
-  centerCanvas();
+  centerCanvas(windowWidth - width, windowHeight - height);
 }
