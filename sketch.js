@@ -1,7 +1,11 @@
 function setup() {
-  // put setup code here
+  var cnv = createCanvas(1400, 750)
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+  background(255, 0, 200);
 }
 
-function draw() {
-  // put drawing code here
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
