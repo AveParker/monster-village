@@ -3,14 +3,6 @@ html, body {
   }
   
   body {
-    background-image: url('/Materials/hero.jpeg');
-      /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:contain;
     margin: 0;
     display: flex;
   
