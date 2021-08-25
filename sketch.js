@@ -28,7 +28,7 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(600,800 );
+  cnv = createCanvas(600,800);
   centerCanvas();
   }
 
