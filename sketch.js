@@ -11,7 +11,7 @@ let villageimg = ''
 let rockimg = ''
 let rocklocation = []
 let monsterimg = ''
-let monsterlocation = [600,800]
+let monsterlocation = [500,600]
 
 
 function preload() {
@@ -28,7 +28,7 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(400,600);
+  cnv = createCanvas(500,600);
   centerCanvas();
   }
 
@@ -39,11 +39,9 @@ function windowResized() {
 function draw(){
 
   background(220,0,200);
-  image(backgroundImg,0,0, 600, 800);
+  image(backgroundImg,0,0, 500, 600);
   image(character, character_y,character_x, 80, 80);
-  
-  image(monsterimg,400,600,120,120);
-
+  image(monsterimg,255,400,120,120);
   image(rockimg,character_y+30,character_x+52,30,30);
   
   ellipse(bulletsLocation[0], bulletsLocation[1], 33 ,33);
