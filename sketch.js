@@ -11,7 +11,7 @@ let villageimg = ''
 let rockimg = ''
 let rocklocation = []
 let monsterimg = ''
-let monsterlocation = [400,600]
+let monsterlocation = [800,1000]
 
 
 function preload() {
@@ -28,7 +28,7 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(650,700);
+  cnv = createCanvas(800,1000 );
   centerCanvas();
   }
 
@@ -39,7 +39,7 @@ function windowResized() {
 function draw(){
 
   background(220,0,200);
-  image(backgroundImg,0,0, 650,  700  );
+  image(backgroundImg,0,0, 800, 1000);
   image(character, character_y,character_x, 80, 80);
   
   image(monsterimg,400,600,120,120);
@@ -74,6 +74,16 @@ function draw(){
   
   
 }
+
+function startScreen(){
+  background(96, 157, 255)
+  fill(255)
+  textAlign(CENTER);
+  text('WELCOME TO MY CATCHING GAME', width / 2, height / 2)
+  text('click to start', width / 2, height / 2 + 20);
+  reset();
+}
+
 
 function keyPressed() {
   if (keyCode === 87) {

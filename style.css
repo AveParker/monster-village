@@ -3,16 +3,19 @@ html, body {
   }
   
   body {
-    background-image: url('/Materials/hero.jpeg');
+    background-image: url('/Materials/newhero.png');
+    
       /* Full height */
     height: 100%;
 
     /* Center and scale the image nicely */
+    ;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:cover;
     margin: 0;
     display: flex;
+  ;
   
     /* This centers our sketch horizontally. */
     justify-content: left;
