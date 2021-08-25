@@ -40,9 +40,9 @@ function draw(){
 
   background(220,0,200);
   image(backgroundImg,0,0, 500, 600);
-  image(character, character_y,character_x, 80, 80);
-  image(monsterimg,255,400,120,120);
-  image(rockimg,character_y+30,character_x+52,30,30);
+  image(character, character_y,character_x, 65, 65 );
+  image(monsterimg,255,400,70,70);
+  image(rockimg,character_y+25,character_x+39 ,30,30);
   
   ellipse(bulletsLocation[0], bulletsLocation[1], 33 ,33);
   console.log(mouseLocation)
