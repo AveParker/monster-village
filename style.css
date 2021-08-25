@@ -3,7 +3,7 @@ html, body {
   }
   
   body {
-    background-image: url('/Materials/newhero.png');
+    background-image: url('Materials/newhero.png');
     
       /* Full height */
     height: 100%;
