@@ -11,7 +11,7 @@ let villageimg = ''
 let rockimg = ''
 let rocklocation = []
 let monsterimg = ''
-let monsterlocation = [800,1000]
+let monsterlocation = [600,800]
 
 
 function preload() {
@@ -22,8 +22,8 @@ function preload() {
 }
 
 function centerCanvas() {
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
+  var x = 600
+  var y = 800
   cnv.position(x, y);
 }
 
