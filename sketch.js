@@ -28,7 +28,7 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(800,1000 );
+  cnv = createCanvas(600,800 );
   centerCanvas();
   }
 
@@ -39,7 +39,7 @@ function windowResized() {
 function draw(){
 
   background(220,0,200);
-  image(backgroundImg,0,0, 800, 1000);
+  image(backgroundImg,0,0, 600, 800);
   image(character, character_y,character_x, 80, 80);
   
   image(monsterimg,400,600,120,120);
