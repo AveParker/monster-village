@@ -15,7 +15,7 @@ let monsterlocation = [800,1000]
 
 
 function preload() {
-  character = loadImage('/Materials/character_walk_right.gif');
+  character = loadImage('Materials/character_walk_right.gif');
   backgroundImg = loadImage('/Materials/village mountain.jpeg')
   rockimg = loadImage('/Materials/unnamed.png')
   monsterimg = loadImage('/Materials/monster.gif')
