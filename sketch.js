@@ -1,5 +1,6 @@
 var cnv;
 let screen = 0
+let score =0
 let character;
 let character_y = 250
 let character_x = 200
@@ -9,16 +10,25 @@ let mouseLocation = []
 let backgroundImg = ''
 let villageimg = ''
 let rockimg = ''
-let rocklocation = []
+let rocklocation = [0,0]
 let monsterimg = ''
 let monsterlocation = [500,600]
+let bulletsFired = []
+let heroimg = ''
 
+class projectile {
+  constructor(){
+    this.x = 0
+    this.y = 0
+    this.speed = 0 }
+}
 
 function preload() {
   character = loadImage('Materials/character_walk_right.gif');
   backgroundImg = loadImage('Materials/village_mountain.jpeg')
   rockimg = loadImage('Materials/unnamed.png')
-  monsterimg = loadImage('Materials/monster.gif')
+  monsterimg = loadImage('Materials/monster2.gif')
+  heroimg = loadImage('Materials/hero.jpeg')
 }
 
 function centerCanvas() {
@@ -38,14 +48,27 @@ function windowResized() {
 
 function draw(){
 
+  if(screen == 0){
+    startScreen()
+  }else if(screen == 1){
+  	gameOn()
+  }else if(screen==2){
+  	endScreen()
+  }	
+}
+
+function gameOn(){
+
+
+
+
   background(220,0,200);
   image(backgroundImg,0,0, 500, 600);
   image(character, character_y,character_x, 65, 65 );
-  image(monsterimg,255,400,70,70);
+  image(monsterimg,255,400,45,60);
   image(rockimg,character_y+25,character_x+39 ,30,30);
   
-  ellipse(bulletsLocation[0], bulletsLocation[1], 33 ,33);
-  console.log(mouseLocation)
+  image(rockimg,bulletsLocation[0]-35, bulletsLocation[1]+20, 33 ,33);
  
   
   if (character_y >= 1050) {
@@ -58,7 +81,9 @@ function draw(){
 
   
   bulletsLocation =[(bulletsLocation[0]) , bulletsLocation[1]+5] 
-
+  if (bulletsLocation[1] >= 600){
+    console.log('passed')
+ }
 
   noStroke();
   textAlign(LEFT);
@@ -67,19 +92,24 @@ function draw(){
   fill(235);
   text("use keys wasd: move", 35, 35);
   text("space bar: throw", 35, 65);
+  textSize(30);
+  textAlign(LEFT);
+  fill(235);
+  text('Score: ' + score ,35,110)
 	
   
-  
+  console.log(bulletsLocation)
   
 }
 
 function startScreen(){
-  background(96, 157, 255)
+  image(heroimg,0,100,500,400)
   fill(255)
   textAlign(CENTER);
-  text('WELCOME TO MY CATCHING GAME', width / 2, height / 2)
-  text('click to start', width / 2, height / 2 + 20);
-  reset();
+  textSize(25,10,25)
+  text('CLICK WITH MOUSE TO START', width / 2, height / 2+40)
+  
+
 }
 
 
@@ -94,13 +124,19 @@ function keyPressed() {
   } else if (keyCode === 68) {  
     character_y = character_y + 20;
   } if (keyCode === 32){
+    console.log('SPACE')
     bulletsLocation = []
     bulletsLocation.push(character_y+65,character_x+35)
-    mouseLocation =[]
-    mouseLocation.push(mouseX,mouseY)
-    console.log(bulletsLocation)
+
+
   } 
   
 }
 
-
+function mousePressed(){
+	if(screen==0){
+  	screen=1
+  }else if(screen==2){
+  	screen=0
+  }
+}
