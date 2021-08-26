@@ -12,7 +12,7 @@ let villageimg = ''
 let rockimg = ''
 let rocklocation = [0,0]
 let monsterimg = ''
-let monsterlocation = [500,600]
+let monsterlocation = [255,400]
 let bulletsFired = []
 let heroimg = ''
 
@@ -58,19 +58,16 @@ function draw(){
 }
 
 function gameOn(){
-
-
-
-
+  
   background(220,0,200);
   image(backgroundImg,0,0, 500, 600);
   image(character, character_y,character_x, 65, 65 );
-  image(monsterimg,255,400,45,60);
+  image(monsterimg,monsterlocation[0],monsterlocation[1],45,60);
   image(rockimg,character_y+25,character_x+39 ,30,30);
-  
   image(rockimg,bulletsLocation[0]-35, bulletsLocation[1]+20, 33 ,33);
  
-  
+  monsterlocation = [monsterlocation[0], monsterlocation[1]-1]
+
   if (character_y >= 1050) {
     character_y = 1045
   } else if(character_x >= 450){
@@ -78,12 +75,39 @@ function gameOn(){
   }   
 
   
-
+  // MOVING Stone to y and x by speed 5
   
   bulletsLocation =[(bulletsLocation[0]) , bulletsLocation[1]+5] 
-  if (bulletsLocation[1] >= 600){
-    console.log('passed')
- }
+
+  // Running Monster to top
+
+  
+  monsterlocation = [monsterlocation[0], monsterlocation[1]-0,01]
+
+
+
+  // HITBOX and Counting on hit
+
+  if (bulletsLocation[1] == monsterlocation[1] && bulletsLocation[0] >= monsterlocation[0]+10 && bulletsLocation[0] <= monsterlocation[0]+65){
+    score += 1 
+    monsterlocation = [Math.floor(Math.random() * (480 - 270 + 1) ) + 270,700]
+    console.log('HIT')
+ } else if (monsterlocation[1] <= 0 ){
+    score -= 1 
+    monsterlocation = [Math.floor(Math.random() * (480 - 270 + 1) ) + 270,700]
+    console.log('HITMISS')
+ } else
+
+
+
+
+ monsterlocation = [monsterlocation[0], monsterlocation[1]-0,01]
+ 
+
+
+
+
+  
 
   noStroke();
   textAlign(LEFT);
@@ -98,7 +122,6 @@ function gameOn(){
   text('Score: ' + score ,35,110)
 	
   
-  console.log(bulletsLocation)
   
 }
 
