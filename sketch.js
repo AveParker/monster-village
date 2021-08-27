@@ -12,7 +12,7 @@ let villageimg = ''
 let rockimg = ''
 let rocklocation = [0,0]
 let monsterimg = ''
-let monsterlocation = [100,700]
+let monsterlocation = [50,700]
 let bulletsFired = []
 let heroimg = ''
 
@@ -90,11 +90,11 @@ function gameOn(){
 
   if (bulletsLocation[1] == monsterlocation[1] && bulletsLocation[0] >= monsterlocation[0]+10 && bulletsLocation[0] <= monsterlocation[0]+65){
     score += 1 
-    monsterlocation = [Math.floor(Math.random() * (400 - 100 + 1) ) + 100,700]
+    monsterlocation = [Math.floor(Math.random() * (500 - 100 + 1) ) + 100,700]
     console.log('HIT')
  } else if (monsterlocation[1] <= 0 ){
     score -= 1 
-    monsterlocation = [Math.floor(Math.random() * (400 - 100 + 1) ) + 100,700]
+    monsterlocation = [Math.floor(Math.random() * (500 - 100 + 1) ) + 100,700]
     console.log('HITMISS')
  } else
 

@@ -1,0 +1,30 @@
+
+function piResponse() {
+		piSetCookie('visitor_id238122', '343497954', 3650);
+			piSetCookie('visitor_id238122-hash', 'bf5671c2f621b46238aaa23cece3632352b19e323667f83af1385d43f6f766cf010bec12f4394630805e3eea6c34a8723b3a18e2', 3650);
+		
+		if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+		var analytics_link = document.location.protocol + "//" + "www2.celonis.com/analytics?";
+		pi.tracker.visitor_id='343497954';
+
+				pi.tracker.visitor_id_sign='bf5671c2f621b46238aaa23cece3632352b19e323667f83af1385d43f6f766cf010bec12f4394630805e3eea6c34a8723b3a18e2';
+		
+				pi.tracker.campaign_id='1390';
+		
+		var variables = 'conly=true';
+		for (property in pi.tracker) {
+					variables += "&" + property + "=" + encodeURIComponent(pi.tracker[property]);
+				}
+		var headID = document.getElementsByTagName("head")[0];
+		piScriptObj[piScriptNum] = document.createElement('script');
+		piScriptObj[piScriptNum].type = 'text/javascript';
+		piScriptObj[piScriptNum].src = analytics_link + variables;
+		headID.appendChild(piScriptObj[piScriptNum]);
+		piScriptObj[piScriptNum].onload = function() { return; }
+	}
+	}
+piResponse();
+
+
+
+
